@@ -1,0 +1,43 @@
+{
+  "name": "project_gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-html-prettify": "0.0.1",
+    "gulp-mode": "^1.0.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "pretty": "^2.0.0",
+    "rimraf": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salabam/gulp.git"
+  },
+  "author": "salabam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salabam/gulp/issues"
+  },
+  "homepage": "https://github.com/salabam/gulp#readme"
+}
