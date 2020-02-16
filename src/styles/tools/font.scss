@@ -1,0 +1,4 @@
+@import "./mixins/font-face.scss";
+
+@include fontMin('poppins400', '../fonts/Poppins/Poppins-Regular.ttf');
+@include fontMin('poppins700Italic', '../fonts/Poppins/Poppins-BoldItalic.ttf');

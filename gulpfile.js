@@ -138,5 +138,5 @@ exports.fonts = fonts;
 
 exports.clean = clean;
 
-exports.build = series(clean, html, styles, scripts);
-exports.default = series(clean, html, styles, scripts, parallel(serve, watchFiles));
+exports.build = series(clean, html, styles, scripts, image, fonts);
+exports.default = series(clean, html, styles, scripts, image, fonts, parallel(serve, watchFiles));
