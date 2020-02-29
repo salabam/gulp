@@ -9,6 +9,7 @@ const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const replace = require('gulp-replace');
 const rigger = require('gulp-rigger');
+const concat = require('gulp-concat');
 // styles
 const sass = require('gulp-sass');
 const mincss = require('gulp-clean-css');
@@ -47,10 +48,11 @@ const paths = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/*.js',
+        js: 'src/js/',
         style: 'src/styles/*.scss',
         img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        libs: 'src/libs/'
     },
     watch: {
         html: 'src/**/*.html',
@@ -78,26 +80,31 @@ function html() {
 }
 
 function scripts() {
-    return src(paths.src.js)
-        .pipe(rigger())
-        .pipe(sourcemaps.init())
+    return src([
+            // paths.src.libs + 'jquery/jquery.min.js',
+            // paths.src.libs + 'owlCarousel/dist/owl.carousel.min.js',
+            paths.src.js + 'main.js'
+        ])
+        .pipe(concat('main.min.js'))
+        // .pipe(rigger())
+        // .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        // .pipe(sourcemaps.write())
         .pipe(dest(paths.dist.js))
         .pipe(browserSync.stream());
 }
 
 function styles() {
     return src(paths.src.style)
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
             cascade: false,
             grid: true
         }))
-        .pipe(mincss({}))
-        .pipe(sourcemaps.write())
+        // .pipe(mincss({}))
+        // .pipe(sourcemaps.write())
         .pipe(dest(paths.dist.style))
         .pipe(browserSync.stream());
 }
